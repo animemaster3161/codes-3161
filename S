@@ -1,0 +1,100 @@
+#include <stdio.h>
+
+int main() 
+{
+    int n, i, key, arr[10];
+    
+    printf("Enter the no of element: ");
+    scanf("%d", &n);
+    
+    printf("Enter %d element:\n", n);
+    for(i = 0; i < n; i++) 
+    {
+        scanf("%d", &arr[i]);
+    }
+    
+    printf("Enter the element to Search: ");
+    scanf("%d", &key);
+    
+    for(i = 0; i < n; i++) 
+    {
+        if(arr[i] == key) 
+        {
+            // Notes me "Enter found" likha tha, ise "Element found" kar diya gaya hai
+            printf("Element found at index %d\n", i); 
+            break;
+        }
+    }
+    
+    if(i == n) 
+    {
+        printf("no element found\n");
+    }
+    
+    return 0;
+}
+
+
+
+
+
+
+
+r
+
+
+
+
+
+
+
+
+#include <stdio.h>
+
+int main() 
+{
+    int i, key, n, arr[10];
+    
+    printf("Enter n of element in an array: ");
+    scanf("%d", &n);
+    
+    // Binary search ke liye array pehle se sorted (kram me) hona zaroori hai
+    printf("Enter %d Sorted elements:\n", n); 
+    for(i = 0; i < n; i++) 
+    {
+        scanf("%d", &arr[i]);
+    }
+    
+    printf("Enter the key element to Search: ");
+    scanf("%d", &key);
+    
+    int low = 0, high = n - 1, mid;
+    
+    while(low <= high) 
+    {
+        mid = (low + high) / 2;
+        
+        // --- यहाँ से आगे का कोड इमेज में कट गया था, जिसे पूरा कर दिया गया है ---
+        
+        if(arr[mid] == key) 
+        {
+            printf("Element found at index %d\n", mid);
+            break;
+        }
+        else if(arr[mid] < key) 
+        {
+            low = mid + 1; // Case III: key is higher than mid
+        }
+        else 
+        {
+            high = mid - 1; // Case II: key is less than mid
+        }
+    }
+    
+    if(low > high) 
+    {
+        printf("No element found\n");
+    }
+    
+    return 0;
+}
