@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+// Function declaration
+int Call_by_val(int P1, int P2);
+
+int main() {
+    int n1, n2, x;
+    
+    n1 = 6;
+    n2 = 9;
+    
+    printf("n1 = %d and n2 = %d \n", n1, n2);
+    
+    x = Call_by_val(n1, n2);
+    
+    printf("n1 = %d and n2 = %d \n", n1, n2);
+    printf("x = %d \n", x);
+    
+    return 0;
+}
+
+// Function definition
+int Call_by_val(int P1, int P2) {
+    int sum;
+    sum = P1 + P2;
+    
+    P1 += 2;
+    P2 += P1;
+    
+    printf("P1 = %d and P2 = %d \n", P1, P2);
+    
+    return sum;
+}
+
